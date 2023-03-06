@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS playlist_db;
-CREATE DATABASE playlist_db;
+CREATE DATABASE music_db;
+USE DATABASE music_db;
