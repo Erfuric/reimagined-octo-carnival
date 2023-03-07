@@ -102,127 +102,127 @@ const songData = [
         song: "",
         artist: "",
         genre:  "Jazz",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Jazz",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Blues",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Blues",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Electronic",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Electronic",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Classical",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Classical",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Folk",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Folk",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Reggae",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Reggae",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Soul",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Soul",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Funk",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Funk",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Metal",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Metal",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "R&B",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "R&B",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Gospel",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Gospel",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "World",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "World",
-    }
+    },
     {
         song: "",
         artist: "",
         genre:  "Opera",
-    }
+    },
     {
         song: "",
         artist: "",
