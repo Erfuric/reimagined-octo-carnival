@@ -26,7 +26,9 @@ The functionality will include:
 | dotenv                         |Used to store environment variables data used by the operating system and other programs (DB_Name, DB_User, B_PW).            |             
 | ByCrypt                        |                                                                                                                              |
 | Insomnia AAPI Design Platform  |A collaborative API client and Design Tool.                                                                                   |
-|                                |                                                                                                                              |                   | Date-fns.org                   |Provides the most comprehensive yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.   |
+| Date-fns.org                   |Provides the most comprehensive yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.   |
+
+
 
 
 
