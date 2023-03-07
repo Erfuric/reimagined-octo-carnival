@@ -1,12 +1,44 @@
-# reimagined-octo-carnival
+# MixMate
 
-# Description
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Placeholder Text
+# Project Summary
 
-# Required Packages
+To build a music playlist creation and sharing platform web application.  The project requires building both the back-end and-front end and involves configuring a working Express.js API to Sequelize to interact with a MySQl database. The application will use Express-session to maintain security through log-in functionality and a hash password.
 
-Placeholder Text
+The functionality will include:
+- Users log-in
+- Create playlists (Song Title-Artist-Genre)
+- Ability to create/edit playlists
+- Ability to view other user playlists
+
+# Packages
+
+|          Package               |                                      Description                                                                             |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| Node.js                        |Executes JavaScript code outside a web browser.                                                                               |
+| MySql                          |A relational databse management system based on structured query language (SQL).                                              |              
+| Sequelize                      |A modern TypeScript and Node.js Object Relational Mapping (ORM) that offers solid transaction support                         |
+| Connect-Session-Sequelize      |                                                                                                                              |
+| Express.js                     |Node.js web application framework providing broad features to build web & mobile application.                                 |
+| Express.Handlebars             |                                                                                                                              |
+| Express-Session                |                                                                                                                              |
+| dotenv                         |Used to store environment variables data used by the operating system and other programs (DB_Name, DB_User, B_PW).            |             
+| ByCrypt                        |                                                                                                                              |
+| Insomnia AAPI Design Platform  |A collaborative API client and Design Tool.                                                                                   |
+|                                |                                                                                                                              |                   | Date-fns.org                   |Provides the most comprehensive yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.   |
+
+
+
+# Project Description
+
+
+
+
+# Usage
+
+
+
 
 # Credits
 
