@@ -2,7 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 const Song = require('./song.js');
-
 const User = require('./User.js');
 
 class Playlist extends Model {}
@@ -20,9 +19,6 @@ Playlist.init(
         type: DataTypes.STRING, 
         primaryKey: true,
         notNull: true,
-        validate: {
-          len: 50
-        }
     },
     creator: {
         data: DataTypes.STRING,
@@ -43,7 +39,7 @@ Playlist.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: User,
         key: 'id',
       },
     },
