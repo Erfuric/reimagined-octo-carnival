@@ -99,138 +99,72 @@ const songData = [
         genre: " Country"
     },
     {
-        song: "",
-        artist: "",
+        song: "Satin Doll",
+        artist: "Count Basie",
         genre:  "Jazz",
     },
     {
-        song: "",
-        artist: "",
-        genre:  "Jazz",
-    },
-    {
-        song: "",
-        artist: "",
+        song: "Mr Lucky",
+        artist: "John Lee Hooker",
         genre:  "Blues",
     },
     {
-        song: "",
-        artist: "",
-        genre:  "Blues",
-    },
-    {
-        song: "",
-        artist: "",
+        song: "Cloud Exploration",
+        artist: "Tom Vaylo",
         genre:  "Electronic",
     },
-    {
-        song: "",
-        artist: "",
-        genre:  "Electronic",
-    },
-    {
-        song: "",
-        artist: "",
+        {
+        song: "Bolero",
+        artist: "Melbourne Symphony Orchestra",
         genre:  "Classical",
     },
-    {
-        song: "",
-        artist: "",
-        genre:  "Classical",
-    },
-    {
-        song: "",
-        artist: "",
+       {
+        song: "Blowin' in the Wind",
+        artist: "Bob Dylan",
         genre:  "Folk",
     },
     {
-        song: "",
-        artist: "",
-        genre:  "Folk",
-    },
-    {
-        song: "",
-        artist: "",
+        song: "Buffalo Soldier",
+        artist: "Bob Marley",
         genre:  "Reggae",
     },
-    {
-        song: "",
-        artist: "",
-        genre:  "Reggae",
-    },
-    {
-        song: "",
-        artist: "",
+      {
+        song: "Chain of Fools",
+        artist: "Aretha Franklin",
         genre:  "Soul",
     },
     {
-        song: "",
-        artist: "",
-        genre:  "Soul",
-    },
-    {
-        song: "",
-        artist: "",
+        song: "Living In America",
+        artist: "James Brown",
         genre:  "Funk",
     },
-    {
-        song: "",
-        artist: "",
-        genre:  "Funk",
-    },
-    {
-        song: "",
-        artist: "",
+       {
+        song: "Fade to Black",
+        artist: "Metallica",
         genre:  "Metal",
     },
     {
-        song: "",
-        artist: "",
-        genre:  "Metal",
-    },
-    {
-        song: "",
-        artist: "",
+        song: "Monalisa",
+        artist: "Chris Brown",
         genre:  "R&B",
     },
     {
-        song: "",
-        artist: "",
-        genre:  "R&B",
-    },
-    {
-        song: "",
-        artist: "",
+        song: "Mary Don't You Weep",
+        artist: "Aretha Franklin",
         genre:  "Gospel",
     },
-    {
-        song: "",
-        artist: "",
-        genre:  "Gospel",
-    },
-    {
-        song: "",
-        artist: "",
+       {
+        song: "We are the Beat",
+        artist: "African World Singers",
         genre:  "World",
     },
-    {
-        song: "",
-        artist: "",
-        genre:  "World",
-    },
-    {
-        song: "",
-        artist: "",
+      {
+        song: "Time to Say Goodbye",
+        artist: "Andrea Bocelli",
         genre:  "Opera",
     },
-    {
-        song: "",
-        artist: "",
-        genre:  "Opera",
-    }
+];
 
-]
-
-const seedSongs = () => Product.bulkCreate(songData);
+const seedSongs = () => Song.bulkCreate(songData);
 
 module.exports = seedSongs;

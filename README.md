@@ -2,49 +2,65 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Project Summary
+## Project Summary
 
-To build a music playlist creation and sharing platform web application.  The project requires building both the back-end and-front end and involves configuring a working Express.js API to Sequelize to interact with a MySQl database. The application will use Express-session to maintain security through log-in functionality and a hash password.
+To build both the back-end and front-end of a music playlist creation and sharing platform web application.  This will require extensive coding, and configuring a working 
+Express.js API using Sequelize to interact with a MySQl database. The application will use Express-session to maintain security through log-in functionality and a hash password.  
 
 The functionality will include:
-- Users log-in
-- Create playlists (Song Title-Artist-Genre)
-- Ability to create/edit playlists
-- Ability to view other user playlists
+- Users log-in.
+- Create playlists (Song Title-Artist-Genre).
+- Ability to create/edit playlists.
+- Ability to view other user playlists.
 
-# Packages
+## Project Team
+
+- Alyshia Kandler: Project Manager
+- Tom Parker:
+- Callum Mackintosh:
+- Neale Chapman:
+
+## Packages Used
+
 
 |          Package               |                                      Description                                                                             |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | Node.js                        |Executes JavaScript code outside a web browser.                                                                               |
 | MySql                          |A relational databse management system based on structured query language (SQL).                                              |              
-| Sequelize                      |A modern TypeScript and Node.js Object Relational Mapping (ORM) that offers solid transaction support                         |
-| Connect-Session-Sequelize      |                                                                                                                              |
-| Express.js                     |Node.js web application framework providing broad features to build web & mobile application.                                 |
-| Express.Handlebars             |                                                                                                                              |
-| Express-Session                |                                                                                                                              |
+| Sequelize                      |A modern TypeScript and Node.js Object Relational Mapping (ORM) that offers solid transaction support.                        |
+| Connect-Session-Sequelize      |A session store for connecting a session using sequelize.                                                                     |
+| Express.js                     |A Node.js web application framework providing broad features to build web & mobile application.                               |
+| Express.Handlebars             |A simple template language to generate HTML or other text formats, includes embedded Handlebar expressions.                   |
+| Express-Session                |Stores the session data on the client in a cookie. Will expires & require logging in again if site left idle for set-time.    |
 | dotenv                         |Used to store environment variables data used by the operating system and other programs (DB_Name, DB_User, B_PW).            |             
-| ByCrypt                        |                                                                                                                              |
+| ByCrypt                        |A password hashing function.                                                                                                  |
 | Insomnia AAPI Design Platform  |A collaborative API client and Design Tool.                                                                                   |
-|                                |                                                                                                                              |                   | Date-fns.org                   |Provides the most comprehensive yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.   |
+| Tailwind CSS                   |A utility-first CSS framework designed to enable users to create a completely custom component design within their HTML.      |         
+| Date-fns.org                   |Provides the most comprehensive yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.   |
 
-
-
-# Project Description
-
-
-
-
-# Usage
+## Project Description
 
 
 
 
-# Credits
+## Usage
+
+
+## Deployed Application and Screenshots
+
+Link:
+
+
+### Screenshots
+
+
+
+
+## Credits
 
 Placeholder Text
 
-# License
+## License
 
 MIT License
 
