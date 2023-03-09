@@ -1,6 +1,6 @@
-[
+ [
     {
-        "name": "Alan_Smithee ",
+        "name": "Alan Smithee ",
         "email": "alansmith@",
         "password": "Terrestial99$$$"
     },
@@ -10,17 +10,17 @@
         "password": "bootcampspot"
     },
     {
-        "name": "Mandy_Potts",
+        "name": "Mandy Potts",
         "email": "misspotts@mpemail.com",
         "password": "pokemon4ever72"
     },
     {
-        "name": "Miranda_Buff",
+        "name": "Miranda Buff",
         "email": "mbuff@extranet.com.au",
         "password": "vampireslayer"
     },
     {
-        "name": "John_Doe",
+        "name": "John Doe",
         "email": "johndoe@gmail.com",
         "password": "JohnDoeexpress99"
     },
@@ -125,3 +125,4 @@
         "password": "Ebonyeyes"
     }
 ]
+
