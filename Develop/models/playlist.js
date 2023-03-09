@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 const Song = require('./song.js');
+
 const User = require('./User.js');
 
 class Playlist extends Model {}
@@ -23,30 +24,6 @@ Playlist.init(
           len: 50
         }
     },
-    songs: {
-      type: DataTypes.STRING,
-      NotNull: true,
-      references: {
-        model: Song,
-        key: 'song'
-      }
-    },
-    artists: {
-      type: DataTypes.STRING,
-      notNull: true,
-      references: {
-        model: Song,
-        key: 'artist'
-      }  
-    },
-    genres: {
-      type: DataTypes.STRING,
-      notNull: true,
-      references: {
-      model: Song,
-      key: 'genre'
-      }
-    },
     creator: {
         data: DataTypes.STRING,
         notNull: true,
@@ -54,7 +31,22 @@ Playlist.init(
             model: User,
             key: 'username'
         },
-    }
+    },
+    song_id: {
+      data: DataTypes.INTEGER,
+      notNull: true,
+      references: {
+          model: Song,
+          key: 'id'
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
