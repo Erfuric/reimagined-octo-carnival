@@ -1,5 +1,5 @@
 // const seedPlaylistSongs = require('./playlist-songs-seeds');
-const seedPlaylists = require('./playlist-seeds');
+const seedPlaylists = require('./playlist');
 const seedSongs = require('./songs');
 const { User } = ('../models');
 const userData = require('./userdata.json');
