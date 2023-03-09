@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
+const Song = require('./song.js');
 
 const User = require('./User.js');
 
@@ -30,7 +31,22 @@ Playlist.init(
             model: User,
             key: 'username'
         },
-    }
+    },
+    song_id: {
+      data: DataTypes.INTEGER,
+      notNull: true,
+      references: {
+          model: Song,
+          key: 'id'
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
