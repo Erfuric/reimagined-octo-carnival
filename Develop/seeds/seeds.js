@@ -8,10 +8,7 @@ const sequelize = require('../config/connection');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
-    console.log('\n----- DATABASE SYNCED -----\n');
-    
-    await seedPlaylistSongs();
-    console.log('\n----- PLAYLISTSONGS SEEDED -----\n');
+    console.log('\n----- DATABASE SYNCED -----\n');    
   
     await seedPlaylists();
     console.log('\n----- PLAYLISTS SEEDED -----\n');
