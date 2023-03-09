@@ -21,7 +21,7 @@ Playlist.init(
         notNull: true,
     },
     creator: {
-        data: DataTypes.STRING,
+        type: DataTypes.STRING,
         notNull: true,
         references: {
             model: User,
@@ -29,7 +29,7 @@ Playlist.init(
         },
     },
     song_id: {
-      data: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       notNull: true,
       references: {
           model: Song,
