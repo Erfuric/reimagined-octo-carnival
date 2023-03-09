@@ -8,23 +8,14 @@ const Playlist = require('./Playlist')
 // belongsTo
 SongTitle.belongsTo(Genre);
 
-Artist.belongsTo(SongTitle);
-
 Playlist.belongsTo(User);
-
-// hasOne
-SongTitle.hasOne(Artist);
 
 // hasMany
 Genre.hasMany(SongTitle);
 
-Artist.hasMany(SongTitle);
-
 User.hasMany(Playlist);
 
 Playlist.hasMany(SongTitle);
-
-Playlist.hasMany(Artist);
 
 Playlist.hasMany(Genre);
 
