@@ -1,4 +1,3 @@
-// const seedPlaylistSongs = require('./playlist-songs-seeds');
 const seedPlaylists = require('./playlist');
 const seedSongs = require('./songs');
 const { User } = ('../models');
@@ -22,4 +21,5 @@ const seedDatabase = async () => {
     });
     process.exit(0);
 };
+
 seedDatabase();

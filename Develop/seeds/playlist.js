@@ -19,8 +19,13 @@ const playlistData = [
     },
     {
         playlist_name: "Moondust",
-        user_id: 19,
+        user_id: 20,
     },
+    {
+        playlist_name: "Tornado99",
+        user_id: 21,
+    },
+
 ];
 
 const seedPlaylists = () => Playlist.bulkCreate(playlistData);
