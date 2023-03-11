@@ -25,9 +25,6 @@ const playlistData = [
         playlist_name: "Tornado99",
         user_id: 21,
     },
-
-
-
 ];
 
 const seedPlaylists = () => Playlist.bulkCreate(playlistData);
