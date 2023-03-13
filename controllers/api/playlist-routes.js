@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Playlist, Song } = require('../../models');
+const { Playlist, Song } = require('../../Develop/models');
 
 // The `/api/categories` endpoint
 
