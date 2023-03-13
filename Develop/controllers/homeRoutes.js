@@ -3,12 +3,13 @@
 /// fetching from database with sequelize
 
 
-const express = require('express');
+// const express = require('express');
+const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 const path = require('path');
 
-const app = express();
+// const app = express();
 
 /*
 // GET Route for hello world test
@@ -47,7 +48,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-module.exports = app;
+module.exports = router;
 
 
 
