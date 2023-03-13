@@ -18,7 +18,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node Develop/seeds/seeds.js"
+    "seed": "node seeds/seeds.js"
   },
   "repository": {
     "type": "git",
