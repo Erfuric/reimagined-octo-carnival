@@ -3,10 +3,24 @@ const routes = require('./Develop/controllers');
 // import sequelize connection
 const sequelize = require('./Develop/config/connection');
 //const { FORCE } = require('sequelize/types/index-hints');
-
-
 const app = express();
+const exphbs = require('express-handlebars');
 const PORT = process.env.PORT || 3001;
+const hbs = exphbs.create({ helpers });
+
+// Configure and link a session object with the sequelize store
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+// Add express-session and store as Express.js middleware
+app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
