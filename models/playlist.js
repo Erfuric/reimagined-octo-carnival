@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../../config/connection.js');
+const sequelize = require('../config/connection.js');
 const Song = require('./song.js');
 const User = require('./User.js');
 

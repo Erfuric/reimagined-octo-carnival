@@ -1,6 +1,6 @@
 // import models
-const User = require('./User');
-const Playlist = require('./Playlist')
+const User = require('./user');
+const Playlist = require('./playlist')
 const Song = require('./song')
 
 // belongsTo
