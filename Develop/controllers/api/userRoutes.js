@@ -1,13 +1,16 @@
 const router = require('express').Router();
-const session = require('express-session');
-const { User } = require('../../models');
+const bcrypt = require('bcrypt');
+const { User } = require('../../models/user');
 const withAuth = require('../../utils/auth');
 
 
 // Create a new user.
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.create({
+    // Hash the password. 
+    req.body.password = await bcrypt.hash(req.body.password, 10);
+    // Create a user.  
+      const userData = await User.create({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
@@ -42,8 +45,10 @@ router.post('/login', async (req, res) => {
     return;
     }
      
-    // Validate the password with password stored in the database against email address.
-    const validPassword = await userData.checkPassword(req.body.password);
+    //Use bcrypt.compare() to validate hashed password.
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      userData.password);
 
     if (!validPassword) {
     res
