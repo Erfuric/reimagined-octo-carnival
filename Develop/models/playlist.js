@@ -23,10 +23,10 @@ Playlist.init(
     creator: {
         type: DataTypes.STRING,
         notNull: true,
-        references: {
-            model: User,
-            key: 'username'
-        },
+        // references: {
+        //     model: User,
+        //     key: 'name'
+        // },
     },
     song_id: {
       type: DataTypes.INTEGER,
