@@ -3,6 +3,7 @@ const { Playlist, Song } = require('../../models');
 
 // The `/api/categories` endpoint
 
+/* old find all
 router.get('/', async (req, res) => {
   // find all playlists
     // be sure to include its associated songs
@@ -17,7 +18,22 @@ router.get('/', async (req, res) => {
     res.json(playlists);
   })
 });
+*/
 
+router.get('/', async (req, res) => {
+  // Find all playlists
+  // Be sure to include its associated songs
+  try {
+    const playlistData = await Playlist.findAll({
+      include: [{ model: Song }, { attributes: ["id", "song", "artist", "genre", "playlist_id"] }],
+    });
+    res.status(200).json(playlistData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+/* old find one
 router.get('/:id', async (req, res) => {
   // find one Playlist by its `id` value
   // be sure to include its associated songs
@@ -37,7 +53,28 @@ router.get('/:id', async (req, res) => {
     res.json(err);
   });
 });
+*/
 
+router.get('/:id', async (req, res) => {
+  // Find a single playlist by its `id`
+  // Be sure to include its associated songs
+  try {
+    const playlistData = await Playlist.findByPk(req.params.id, {
+      include: [{ model: Song }, { attributes: ["id", "song", "artist", "genre", "playlist_id"] }],
+    });
+
+    if (!playlistData) {
+      res.status(404).json({ message: "No playlist found with that ID." });
+      return;
+    }
+
+    res.status(200).json(playlistData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+/* old create
 router.post('/', async (req, res) => {
   // create a new playlist
   await Playlist.update(req.body, {
@@ -49,7 +86,21 @@ router.post('/', async (req, res) => {
   .then((updatedPlaylist) => res.status(200).json(updatedPlaylist))
   .catch((err) => {res.json(err);});
 });
+*/
 
+router.post('/', async (req, res) => {
+  // Create a new playlist
+  try {
+    const playlistData = await Playlist.create({
+      playlist_id: req.body.playlist_id,
+    });
+    res.status(200).json(playlistData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+/* old update route
 router.put('/:id', async (req, res) => {
   // update a plsylist by its `id` value
   await Playlist.update(req.body, {
@@ -61,6 +112,7 @@ router.put('/:id', async (req, res) => {
   .then((updatedPlaylist) => res.status(200).json(updatedPlaylist))
   .catch((err) => {res.json(err);});
 });
+*/
 
 router.put('/:id', async (req, res) => {
   // Update a playlist by its `id` value
@@ -83,6 +135,7 @@ router.put('/:id', async (req, res) => {
 
 });
 
+/* old delete
 router.delete('/:id', async (req, res) => {
   // delete a playlist by its `id` value
   await Playlist.destroy({
@@ -96,6 +149,27 @@ router.delete('/:id', async (req, res) => {
 	.catch((err) => {
 		res.json(err);
 	});
+});
+*/
+
+router.delete('/:id', async (req, res) => {
+  // delete a playlist by its `id` value
+  try {
+    const playlistData = await Playlist.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!playlistData) {
+      res.status(404).json({ message: 'No playlist found with that ID.' });
+      return;
+    }
+
+    res.status(200).json(playlistData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
