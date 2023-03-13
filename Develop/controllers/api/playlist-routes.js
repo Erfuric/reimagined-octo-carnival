@@ -25,10 +25,11 @@ router.get('/', async (req, res) => {
   // Be sure to include its associated songs
   try {
     const playlistData = await Playlist.findAll({
-      include: [{ model: Song }, { attributes: ["id", "song", "artist", "genre", "playlist_id"] }],
+      include: [{ model: Song },],
     });
     res.status(200).json(playlistData);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });

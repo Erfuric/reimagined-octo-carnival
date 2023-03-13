@@ -18,8 +18,8 @@ app.get('/', (req, res) =>
 );
 */
 
-// Homepage
-router.get('/', withAuth, async (req, res) => {
+// Homepage (withAuth) middleware
+router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -28,12 +28,13 @@ router.get('/', withAuth, async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('homepage', {
+    res.render('login', {
       users,
       // Pass the logged in flag to the template
-      logged_in: req.session.logged_in,
+      //logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
