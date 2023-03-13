@@ -62,6 +62,27 @@ router.put('/:id', async (req, res) => {
   .catch((err) => {res.json(err);});
 });
 
+router.put('/:id', async (req, res) => {
+  // Update a playlist by its `id` value
+  try {
+    const playlistData = await Playlist.update(
+      {
+        playlist_name: req.body.playlist_name,
+      },
+      {
+        where: {
+          playlist_id: req.params.playlist_id,
+        },
+      }
+    );
+
+    res.status(200).json(playlistData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+});
+
 router.delete('/:id', async (req, res) => {
   // delete a playlist by its `id` value
   await Playlist.destroy({
