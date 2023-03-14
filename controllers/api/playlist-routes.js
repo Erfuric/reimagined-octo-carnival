@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
 router.get('/', async (req, res) => {
   // Find all playlists
   // Be sure to include its associated songs
+  console.log('hello underground world')
   try {
     const playlistData = await Playlist.findAll({
       include: [{ model: Song },],
