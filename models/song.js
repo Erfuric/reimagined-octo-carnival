@@ -42,7 +42,7 @@ Song.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'song_title',
+    modelName: 'song',
   }
 );
 
