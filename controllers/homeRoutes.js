@@ -8,6 +8,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 const path = require('path');
+const Playlist = require('../models/playlist');
 
 // const app = express();
 
@@ -48,6 +49,18 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/playlists', async (req, res) => {
+  const playlistData = await Playlist.findAll({
+    //include: [{ model: Song, User },],
+  });
+  const playlistAll = playlistData.map(obj => obj.get({plain: true}))
+  res.render('playlist', { playlistAll })
+
+});
+
+
+
 
 module.exports = router;
 
