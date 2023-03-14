@@ -3,20 +3,23 @@
     <h2 class="text-2xl font-bold mb-4">Log in to your account</h2>
     <form>
       <div class="mb-4">
+        <h3>Username</h3>
         <label class="block text-gray-700 font-bold mb-2" for="username">
-          {{username}}
+          {{User.name}}
         </label>
         <input class="border rounded w-full py-2 px-3 text-gray-700" type="text" id="username" name="username">
       </div>
       <div class="mb-6">
         <label class="block text-gray-700 font-bold mb-2" for="email">
-          {{email}}
+          {{User.email}}
         </label>
+        <h3>Email</h3>
         <input class="border rounded w-full py-2 px-3 text-gray-700" type="text" id="email" name="email">
       </div>
       <div class="mb-8">
+        <h3>Password</h3>
         <label class="block text-gray-700 font-bold mb-2" for="password">
-          {{password}}
+          {{User.password}}
         </label>
         <input class="border rounded w-full py-2 px-3 text-gray-700" type="password" id="password" name="password">
       </div>
