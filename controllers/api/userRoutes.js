@@ -101,8 +101,3 @@ res.json(userData);
 });
 
 module.exports = router;
-
-
-
-
-
