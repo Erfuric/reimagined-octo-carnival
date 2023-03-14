@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 const Song = require('./song.js');
-const User = require('./User.js');
+const User = require('./user.js');
 
 class Playlist extends Model {}
 
