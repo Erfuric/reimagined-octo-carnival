@@ -19,7 +19,7 @@ async function loginFormHandler(event) {
 
         // Response to fetch received, status checked and applicable message displayed. 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/api/playlist-routes');
             alert('Welcome to MixMate!');
         } else {
             alert('Failed to log in, please try again!');
