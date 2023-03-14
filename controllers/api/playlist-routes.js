@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Playlist, Song } = require('../../models');
+const { Playlist, Song, User } = require('../../models');
 
 // The `/api/categories` endpoint
 
@@ -26,9 +26,14 @@ router.get('/', async (req, res) => {
   console.log('hello underground world')
   try {
     const playlistData = await Playlist.findAll({
-      include: [{ model: Song },],
+      //include: [{ model: Song, User },],
     });
-    res.status(200).json(playlistData);
+         // .then((playlistData) => {
+        //res.json(playlistData);
+     // })
+     const sandwiches = playlistData.map(obj => obj.get({plain: true}))
+     console.log(sandwiches)
+    res.status(200).json(sandwiches);
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
