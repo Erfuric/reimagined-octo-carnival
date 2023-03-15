@@ -19,6 +19,8 @@ const date = hbs.handlebars.registerHelper('today_date', function() {
   return `${today}`;
 })
 
+
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 //const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -33,6 +35,7 @@ const sess = {
   // })
 };
 
+app.use(express.static('public/images'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Add express-session and store as Express.js middleware
