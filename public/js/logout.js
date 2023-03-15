@@ -7,11 +7,10 @@ async function logout() {
 
     // Response to fetch received, status checked and applicable message displayed. 
     if (response.ok) {
-        document.location.replace('/');
         alert('Thankyou for visiting MixMate!');
+        document.location.replace('/');
+
     } else {
         alert('Failed to log out, please try again!');
     }
 };
-
-document.querySelector('#logout').addEventListener('click', logout);

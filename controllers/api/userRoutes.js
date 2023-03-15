@@ -1,18 +1,19 @@
 const router = require('express').Router();
-const bcrypt = require('bcrypt');
-const { User } = require('../../models/user');
+
+const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
 // Create a new user.
 router.post('/', async (req, res) => {
     try {
-    // Hash the password. 
-    req.body.password = await bcrypt.hash(req.body.password, 10);
+       
+      // Hash the password. 
+    // req.body.password = await bcrypt.hash(req.body.password, 10);
     // Create a user.  
       const userData = await User.create({
-            username: req.body.username,
-            email: req.body.email,
+            name: req.body.name,
+            // email: req.body.email,
             password: req.body.password,
         });
 
@@ -30,43 +31,48 @@ router.post('/', async (req, res) => {
 
 // Login using email address and password.
 router.post('/login', async (req, res) => {
-    // Search for email address in database.
-    try {
-        const userData = await User.findOne({
-            where: {
-              email: req.body.email,
-            },
-        });
-
+  console.log("this REQ BODY=: ", req.body)
+  // Search for email address in database.
+  try {
+    console.log('hello')
+    const userData = await User.findOne({
+      where: {
+        name: req.body.name,
+      },
+    });
+    console.log("this is user data: ", userData)
     if (!userData) {
-     res
-       .status(400)
-       .json ({message: 'Your email address or password is incorrect. Please try again!'});
-    return;
+      res
+        .status(400)
+        .json({ message: 'Your email address or password is incorrect. Please try again!' });
+      return;
     }
-     
-    //Use bcrypt.compare() to validate hashed password.
-    const validPassword = await bcrypt.compare(
-      req.body.password,
-      userData.password);
+
+    // Use bcrypt.compare() to validate hashed password.
+    const validPassword = userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-    res
+      res
         .status(400)
-        .json({ message:  'Your email address or password is incorrect. Please try again!'});
-    return;
+        .json({ message: 'Your email address or password is incorrect. Please try again!' });
+      return;
     }
+    console.log(validPassword)
 
-req.session.save(() => {
-    req.session.user_id = userData.id,
-    req.session.logged_in = true;
+    
+    req.session.save(() => {
 
-    res.json({user: userData, message: 'Welcome to MixMate'});
-});
+      req.session.user_id = userData.id,
+        req.session.logged_in = true;
 
-} catch (err) {
-  res.status(400).json(err);
-}
+      res.json({ user: userData, message: 'Welcome to MixMate' });
+    });
+
+  } catch (err) {
+
+    console.log(err)
+    res.status(400).json(err);
+  }
 });
 
 // logout
