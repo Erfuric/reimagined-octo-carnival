@@ -7,10 +7,11 @@ function loginFunction (event) {
 
     console.log('login function executed');
 
-    const user = document.querySelector('#user-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const user = document.querySelector('#user-login');
+    const password = document.querySelector('#password-login');
 
-    console.log(user) && console.log(password);
+    console.log(user.value);
+    console.log(password.value);
 
 }
 
