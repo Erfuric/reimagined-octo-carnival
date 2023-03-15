@@ -1,128 +1,15 @@
  [
     {
-        "name": "Alan Smithee ",
-        "email": "alansmith@",
-        "password": "Terrestial99$$$"
+        "name": "admin",
+        "password": "admin"
     },
     {
-        "name": "NealeAust",
-        "email": "nealechapman@optushome.com.au",
-        "password": "bootcampspot"
+        "name": "user1",
+        "password": "password"
     },
     {
-        "name": "Mandy Potts",
-        "email": "misspotts@mpemail.com",
-        "password": "pokemon4ever72"
-    },
-    {
-        "name": "Miranda Buff",
-        "email": "mbuff@extranet.com.au",
-        "password": "vampireslayer"
-    },
-    {
-        "name": "John Doe",
-        "email": "johndoe@gmail.com",
-        "password": "JohnDoeexpress99"
-    },
-    {
-        "name": "ThunderbirdsRGo",
-        "email": "thunderbirds@rgomail.com.au",
-        "password": "Brainsforever23"
-    },
-    {
-        "name": "Maxine Trooper",
-        "email": "mtrooper@ausmail.com.au",
-        "password": "supertrooper"
-    },
-    {
-        "name": "VandaRock",
-        "email": "vandarock@rocknet.com.au",
-        "password": "Fridayonmymind"
-    },
-    {
-        "name": "Debb",
-        "email": "bedd@extranet.com.au",
-        "password": "DebDebBeb123"
-    },
-    {
-        "name": "Panda Zali",
-        "email": "panda.zali@gmail.com",
-        "password": "deli321321"
-    },
-    {
-        "name": "Joe Beefcake",
-        "email": "iosupdate7@gmail.com ",
-        "password": "BeefTaco"
-    },
-    {
-        "name": "Kelly Bray",
-        "email": "yubray0@yopmail.com",
-        "password": "yb777oo68w"
-    },
-    {
-        "name": "Ruth Sayers",
-        "email": "rsayers@extranet.com.au",
-        "password": "sdfaer23"
-    },
-    {
-        "name": "Colorfull Kate",
-        "email": "katecurtain@bignet.com",
-        "password": "yellowsubmarine"
-    },
-    {
-        "name": "Garth Archer",
-        "email": "gartharcher@gignet.com.au",
-        "password": "bullseye1&2&3"
-    },
-    {
-        "name": "Catalina Reid",
-        "email": "cataline@yahoo.com.au",
-        "password": "soccermum"
-    },
-    {
-        "name": "Tonya_House",
-        "email": "tonyahs@housenet.com.au",
-        "password": "bricks&morta"
-    },
-    {
-        "name": "scooter",
-        "email": "stevensc@jmail.com.au",
-        "password": "downhillonly"
-    },
-    {
-        "name": "birthdayboy",
-        "email": "birthdayboy@mail.com.au",
-        "password": "foreveryoung"
-    },
-    {
-        "name": "Moondust",
-        "email": "moondust@email.com.au",
-        "password": "Appollo12"
-    },
-    {
-        "name": "tommygoulash",
-        "email": "tomgoul@yahoo.com",
-        "password": "goulashforever"
-    },
-    {
-        "name": "Lefty Tornado",
-        "email": "leftytornado@bignet.com.au",
-        "password": "blownaway"
-    },
-    {
-        "name": "Peter Eleven",
-        "email": "petereleven@numbersnet.com",
-        "password": "unperfectpete"
-    },
-    {
-        "name": "Joey Zebra",
-        "email": "joeydr@opmail.com.au",
-        "password": "allstripes"
-    },
-    {
-        "name": "Ebony Brown",
-        "email": "ebonybrown@colornet.com.au",
-        "password": "Ebonyeyes"
+        "name": "user2",
+        "password": "123456"
     }
 ]
 
