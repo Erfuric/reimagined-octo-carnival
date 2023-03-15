@@ -8,30 +8,32 @@ const app = express();
 const exphbs = require('express-handlebars');
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({});
+var session = require('express-session');
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-//const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // Configure and link a session object with the sequelize store
-// const sess = {
-//   secret: 'Super secret secret',
-//   cookie: {},
-//   resave: false,
-//   saveUninitialized: true,
-  // store: new SequelizeStore({
-  //   db: sequelize
-  // })
-// };
+  const sess = {
+    secret: 'Super secret secret',
+    cookie: {}, // TODO: change to expire on logout when testing finished
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  };
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Add express-session and store as Express.js middleware
-//app.use(session(sess));
+ app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(session(sess));
+
 
 app.use(routes);
 

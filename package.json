@@ -19,7 +19,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/seeds.js",
-    "seedstart": "node seeds/seeds.js \n node server.js"
+    "seedstart": "node seeds/seeds.js && node server.js"
 
   },
   "repository": {
