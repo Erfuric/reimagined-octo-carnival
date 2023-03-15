@@ -3,7 +3,6 @@ const express = require('express');
 const e = require('express');
 const app = express();
 
-
 // TO DO: Logic and functions for creating new playlist including submit button 
 
 const createButton = document.getElementById('create-button');
@@ -16,7 +15,6 @@ const songsArray = []
 songNames.forEach(songNames => {
     songNames.push(songsArray);
 });
-
 
 
 for (let i = 0; i < songsArray.length; i++) {
@@ -52,8 +50,6 @@ for (let i = 0; i < songsArray.length; i++) {
     // playlist name + id?
     // song names + ids?
 
-
-    
 };
 
 
