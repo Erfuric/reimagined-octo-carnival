@@ -43,7 +43,8 @@ router.get('/', async (req, res) => {
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect('/');
+    // res.redirect('/api/playlist-routes');
+    res.render('playlist');
     return;
   }
 
