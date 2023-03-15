@@ -4,17 +4,16 @@ async function signupFormHandler(event) {
 
     // Get the information from login page.
     const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
+    // const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
     // Once all three fields are populated.
     // POST new user details to the user table in database.
-    if (username && email && password) {
+    if (username && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({
                 username,
-                email,
                 password
             }),
             headers: { 'Content-Type': 'application/json' },
