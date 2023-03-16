@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Song } = require('../models');
 const withAuth = require('../utils/auth');
 const path = require('path');
 const Playlist = require('../models/playlist');
@@ -46,12 +46,12 @@ router.post('/logout', (req, res) => {
 });
 
 router.get('/playlist', async (req, res) => {
-  // const playlistData = await Playlist.findAll({
-  //   // include: [{ model: Song, User },],
-  // });
-  // const playlistAll = playlistData.map(obj => obj.get({plain: true}))
-  // res.render('playlist', { playlistAll })
-  res.render('playlist');
+  const playlistData = await Playlist.findAll({
+    include: [{ model: Song, User },],
+  });
+  const playlistAll = playlistData.map(obj => obj.get({plain: true}))
+  res.render('playlist', { playlistAll })
+  // res.render('playlist');
 
 });
 
