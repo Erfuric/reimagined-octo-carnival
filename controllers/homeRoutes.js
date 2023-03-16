@@ -6,20 +6,11 @@ const Playlist = require('../models/playlist');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['username', 'ASC']],
-    });
-
-    const users = userData.map((project) => project.get({ plain: true }));
-
-
-    res.render('homepage', {
-      users,
+    res.render('playlist', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -32,7 +23,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
 
 router.get('/logout', async (req, res) => {
   console.log('Logout route called');
@@ -51,22 +41,17 @@ router.get('/logout', async (req, res) => {
   }
 });
 
-
-
 router.get('/playlist', async (req, res) => {
   const playlistData = await Playlist.findAll({
-    include: [{ model: Song, User },],
+    include: [{ model: Song, User }],
   });
-  const playlistAll = playlistData.map(obj => obj.get({plain: true}))
-  res.render('playlist', { playlistAll })
-  // res.render('playlist');
-
+  const playlistAll = playlistData.map((obj) => obj.get({ plain: true }));
+  res.render('playlist', { playlistAll });
 });
 
-// send newplaylist {{template}} on navbar click
+// Send newplaylist {{template}} on navbar click
 router.get('/newplaylist', async (req, res) => {
   res.render('newplaylist');
-})
-
+});
 
 module.exports = router;
