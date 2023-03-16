@@ -22,7 +22,6 @@ The functionality will include:
 
 ## Packages Used
 
-
 |          Package               |                                      Description                                                                             |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | Node.js                        |Executes JavaScript code outside a web browser.                                                                               |
@@ -33,43 +32,58 @@ The functionality will include:
 | Express.Handlebars             |A simple template language to generate HTML or other text formats, includes embedded Handlebar expressions.                   |
 | Express-Session                |Stores the session data on the client in a cookie. Will expires & require logging in again if site left idle for set-time.    |
 | dotenv                         |Used to store environment variables data used by the operating system and other programs (DB_Name, DB_User, B_PW).            |             
-| ByCrypt                        |A password hashing function.                                                                                                  |
+| Bcrypt                        |A password hashing function.                                                                                                  |
 | Insomnia AAPI Design Platform  |A collaborative API client and Design Tool.                                                                                   |
 | Tailwind CSS                   |A utility-first CSS framework designed to enable users to create a completely custom component design within their HTML.      |         
 | Date-fns.org                   |Provides the most comprehensive yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.   |
 
+## MixMate
+
+The MixMate web application is an easy to use application to create music playlists and share them. It is a fun way to store and enjoy your favourite songs for both you and your family & friends enjoyment. It has been purposely designed to meet a number of non-functional requirements including functionality, inviting aesthetics and a secure environment where users are required to login using a username and a password that is hashed for extra security.
+
 ## Project Description
+ 
+The main objective of this project was for a project team to build the back-end and front-end of an application from scratch. This included but was not limited to coding the following main file types and linking them:
 
+- connection.js
+- Multiple routes
+- schema.sql
+- Models
+- Multiple Javascript files
+- Seeds
+- auth.js, helpers.js
+- Eight handlebar files
+- Server.js
 
-
+The project also required loading a range of software packages and pushing work completed to Github by creating branches, with submitted work being approved before being loaded to Github.
 
 ## Usage
 
+To access the MixMate web application homepage at the command-line the following commands are entered:
+
+- mysql -u root-p
+- Enter password
+- USE mixmate_db
+- quit or \n to leave 'sql'
+- npm run seeds
+- node server.js
+
+Upon successfully entering these commands the sentence **"App listening on port 3001!"** is displayed.
+
+At this point the user either navigates to insomnia or the web browser and enters "localhost:3001", then presses send or enter based on which application.
+
+The home page of the MixMate application is displayed and the user logs in.  Upon successful log-in the user uses a horizontal menu bar to either create, update or share their playlist.
 
 ## Deployed Application and Screenshots
 
 Link:
-
 
 ### Screenshots
 
 
 
 
-## Credits
-
-Placeholder Text
 
 ## License
 
-MIT License
-
-Copyright (c) [2023] [CPlacehlder Text]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
+MIT 
