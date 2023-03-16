@@ -13,6 +13,7 @@ router.get('/', withAuth, async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
+
     res.render('homepage', {
       users,
       logged_in: req.session.logged_in,
@@ -31,6 +32,7 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
 
 router.post('/logout', (req, res) => {
   console.log('Logout route called');
