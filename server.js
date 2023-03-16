@@ -5,14 +5,14 @@ const session = require("express-session");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const path = require('path');
 const exphbs = require('express-handlebars');
-const cors = require('cors'); // Add this line
+// const cors = require('cors'); // Add this line  < redundant
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({});
 
 // Add the CORS middleware
-app.use(cors());
+// app.use(cors()); < redundant
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
