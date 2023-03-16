@@ -34,16 +34,24 @@ router.get('/login', (req, res) => {
 });
 
 
-router.post('/logout', (req, res) => {
+router.get('/logout', async (req, res) => {
   console.log('Logout route called');
   if (req.session.logged_in) {
-    req.session.destroy(() => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ message: 'Error during logout' });
+      }
+      res.clearCookie('connect.sid');
+      // Redirect to the login page after successfully logging out
       res.redirect('/login');
     });
   } else {
-    res.redirect('/login');
+    res.status(400).json({ message: 'You are not logged in' });
   }
 });
+
+
 
 router.get('/playlist', async (req, res) => {
   // const playlistData = await Playlist.findAll({

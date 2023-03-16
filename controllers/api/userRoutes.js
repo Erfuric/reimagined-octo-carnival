@@ -77,16 +77,16 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// logout
-router.post ('/logout', (req, res) => {
-  if (req.session.logged.in) {
-  req.session.destroy(() => {
-    res.status(204).end();
-  });
-  } else {
-  res.status(404).end();
-  }
-});
+// // logout
+// router.post ('/logout', (req, res) => {
+//   if (req.session.logged.in) {
+//   req.session.destroy(() => {
+//     res.status(204).end();
+//   });
+//   } else {
+//   res.status(404).end();
+//   }
+// });
 
 // Delete an existing user 
 router.delete('/:id', withAuth, (req, res) => {
