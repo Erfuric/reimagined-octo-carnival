@@ -14,26 +14,26 @@ function loginFunction (event) {
 
     console.log(name)
 
-    // Upon entering login details.
-    if (name && password) {
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            body: JSON.stringify({
-                name,
-                password
-            }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        console.log(response.ok)
-        // Response to fetch received, status checked and applicable message displayed. 
-        if (response.ok) {
-            alert('Welcome to MixMate!');
-            document.location.replace('/');
+    // // Upon entering login details.
+    // if (name && password) {
+    //     const response = await fetch('/api/users/login', {
+    //         method: 'POST',
+    //         body: JSON.stringify({
+    //             name,
+    //             password
+    //         }),
+    //         headers: { 'Content-Type': 'application/json' },
+    //     });
+    //     console.log(response.ok)
+    //     // Response to fetch received, status checked and applicable message displayed. 
+    //     if (response.ok) {
+    //         alert('Welcome to MixMate!');
+    //         document.location.replace('/');
 
-        } else {
-            alert('Failed to log in, please try again!');
-        }
-    }
+    //     } else {
+    //         alert('Failed to log in, please try again!');
+    //     }
+    // }
 };
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
@@ -46,7 +46,7 @@ document.querySelector('.login-form').addEventListener('submit', loginFormHandle
     console.log(user.value);
     console.log(password.value);
 
-}
+
 
 
 submitButton.addEventListener('click', loginFunction)
