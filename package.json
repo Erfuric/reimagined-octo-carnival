@@ -6,6 +6,7 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
+    "cors": "^2.8.5",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
@@ -20,7 +21,6 @@
     "start": "node server.js",
     "seed": "node seeds/seeds.js",
     "seedstart": "node seeds/seeds.js && node server.js"
-
   },
   "repository": {
     "type": "git",

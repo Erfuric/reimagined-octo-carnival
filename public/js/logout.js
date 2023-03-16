@@ -1,28 +1,14 @@
-// //  A function to logout the user.
-// async function logout() {
-//     const response = await fetch('api/users/logout', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' }
-//     });
-
-
-    // Response to fetch received, status checked and applicable message displayed. 
+const logout = async () => {
+    const response = await fetch('/api/users/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
     if (response.ok) {
-        alert('Thankyou for visiting MixMate!');
-        document.location.replace('/');
-
+      document.location.replace('/login');
     } else {
-        alert('Failed to log out, please try again!');
+      alert(response.statusText);
     }
-};
-
-//     // Response to fetch received, status checked and applicable message displayed. 
-//     if (response.ok) {
-//         document.location.replace('/');
-//         alert('Thankyou for visiting MixMate!');
-//     } else {
-//         alert('Failed to log out, please try again!');
-//     }
-// };
-
-// document.querySelector('#logout').addEventListener('click', logout);
+  };
+  
+  document.querySelector('#logout').addEventListener('click', logout);

@@ -6,15 +6,13 @@ const withAuth = require('../../utils/auth');
 
 // Create a new user.
 router.post('/', async (req, res) => {
+  console.log('Login route hit');
     try {
        
       // Hash the password. 
     // req.body.password = await bcrypt.hash(req.body.password, 10);
     // Create a user.  
       const userData = await User.create({
-
-            name: req.body.name,
-            // email: req.body.email,
 
             username: req.body.username,
 
@@ -41,7 +39,7 @@ router.post('/login', async (req, res) => {
     console.log('hello')
     const userData = await User.findOne({
       where: {
-        name: req.body.name,
+        username: req.body.name,
       },
     });
     console.log("this is user data: ", userData)

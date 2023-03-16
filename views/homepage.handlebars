@@ -1,0 +1,22 @@
+{{!-- views/homepage.handlebars --}}
+
+<header>
+    <h1>Welcome to the Homepage</h1>
+    {{#if logged_in}}
+        <a href="#" id="logout">Logout</a>
+    {{else}}
+        <a href="/login">Login</a>
+    {{/if}}
+</header>
+<main>
+    <h2>Users</h2>
+    <ul>
+        {{#each users}}
+            <li>{{username}}</li>
+        {{/each}}
+    </ul>
+</main>
+
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
