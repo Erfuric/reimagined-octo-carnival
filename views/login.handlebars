@@ -25,4 +25,26 @@
   </div>
 </div>
 
-<script src="./js/login.js"></script>
+<script>
+
+  const submitButton = document.getElementById('submit-button');
+
+
+
+function loginFunction () {
+    // event.preventDefault();
+
+    console.log('login function executed');
+
+    const user = document.querySelector('#user-login');
+    const password = document.querySelector('#password-login');
+
+    console.log(user.value); 
+    console.log(password.value);
+
+}
+
+
+submitButton.addEventListener('click', loginFunction)
+
+</script>

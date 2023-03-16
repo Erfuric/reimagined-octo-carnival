@@ -19,9 +19,6 @@ app.get('/', (req, res) =>
 );
 */
 
-
-
-
 // Homepage (withAuth) middleware
 router.get('/', async (req, res) => {
 
