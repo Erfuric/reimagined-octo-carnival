@@ -7,14 +7,14 @@
         <label class="block text-gray-700 font-bold mb-2" for="name">
           {{User.name}}
         </label>
-        <input class="border rounded w-full py-2 px-3 text-gray-700" type="text" id="name" name="name">
+        <input class="border rounded w-full py-2 px-3 text-gray-700" type="text" id="username-login" name="name">
       </div>
       <div class="mb-8">
         <h3>Password</h3>
         <label class="block text-gray-700 font-bold mb-2" for="password">
           {{User.password}}
         </label>
-        <input class="border rounded w-full py-2 px-3 text-gray-700" type="password" id="password" name="password">
+        <input class="border rounded w-full py-2 px-3 text-gray-700" type="password" id="password-login" name="password">
       </div>
       <button
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -26,25 +26,33 @@
 </div>
 
 <script>
-
   const submitButton = document.getElementById('submit-button');
 
-
-
-function loginFunction () {
-    // event.preventDefault();
+  async function loginFunction(event) {
+    event.preventDefault();
 
     console.log('login function executed');
 
-    const user = document.querySelector('#user-login');
+    const username = document.querySelector('#username-login');
     const password = document.querySelector('#password-login');
 
-    console.log(user.value); 
+    console.log(username.value);
     console.log(password.value);
 
-}
+    if (username.value && password.value) {
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ name: username.value, password: password.value }),
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-
-submitButton.addEventListener('click', loginFunction)
-
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to log in');
+      }
+    }
+  }
+  console.log('Attaching event listener to submit button');
+  submitButton.addEventListener('click', loginFunction);
 </script>

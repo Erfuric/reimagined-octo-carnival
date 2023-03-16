@@ -1,43 +1,21 @@
-// main home path '/'
-
-/// fetching from database with sequelize
-
-
-// const express = require('express');
 const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 const path = require('path');
 const Playlist = require('../models/playlist');
 
-// const app = express();
-
-/*
-// GET Route for hello world test
-app.get('/', (req, res) =>
-  console.log('hello underground world')
-);
-*/
-
-// Homepage (withAuth) middleware
-router.get('/', async (req, res) => {
-
-  // withAuth  // <<< middleware method.
-
+router.get('/', withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
+      order: [['username', 'ASC']],
     });
-
-    
 
     const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('playlist', {
+    res.render('homepage', {
       users,
-      // Pass the logged in flag to the template
-      //logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err)
@@ -46,29 +24,24 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    // res.redirect('/api/playlist-routes');
-    res.render('playlist');
+    res.redirect('/');
     return;
   }
 
   res.render('login');
 });
 
-router.get('/playlists', async (req, res) => {
-  const playlistData = await Playlist.findAll({
-    // include: [{ model: Song, User },],
-  });
-  const playlistAll = playlistData.map(obj => obj.get({plain: true}))
-  res.render('playlist', { playlistAll })
-
+router.post('/logout', (req, res) => {
+  console.log('Logout route called');
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.redirect('/login');
+    });
+  } else {
+    res.redirect('/login');
+  }
 });
 
 
-
-
 module.exports = router;
-
-
-
