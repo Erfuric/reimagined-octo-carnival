@@ -76,13 +76,17 @@ The home page of the MixMate application is displayed and the user logs in.  Upo
 
 ## Deployed Application and Screenshots
 
-Link:
+Link: https://mixmate.herokuapp.com/login
 
 ### Screenshots
 
+![image](https://user-images.githubusercontent.com/115671306/225545309-94bd4115-5dd0-400d-868c-c12f35758de9.png)
 
+![image](https://user-images.githubusercontent.com/115671306/225545399-0387ef61-92cc-4731-a35b-a00001ae5b84.png)
 
+![image](https://user-images.githubusercontent.com/115671306/225545460-b570608c-52e8-4634-93ae-5c8041c6a935.png)
 
+![image](https://user-images.githubusercontent.com/115671306/225545518-ca7ff50e-7635-4307-98c9-c76dd711dcee.png)
 
 ## License
 
