@@ -56,14 +56,20 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/playlists', async (req, res) => {
-  const playlistData = await Playlist.findAll({
-    // include: [{ model: Song, User },],
-  });
-  const playlistAll = playlistData.map(obj => obj.get({plain: true}))
-  res.render('playlist', { playlistAll })
+router.get('/playlist', async (req, res) => {
+  // const playlistData = await Playlist.findAll({
+  //   // include: [{ model: Song, User },],
+  // });
+  // const playlistAll = playlistData.map(obj => obj.get({plain: true}))
+  // res.render('playlist', { playlistAll })
+  res.render('playlist');
 
 });
+
+// send newplaylist {{template}} on navbar click
+router.get('/newplaylist', async (req, res) => {
+  res.render('newplaylist');
+})
 
 
 
