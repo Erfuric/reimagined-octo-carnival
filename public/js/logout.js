@@ -5,6 +5,17 @@
 //         headers: { 'Content-Type': 'application/json' }
 //     });
 
+
+    // Response to fetch received, status checked and applicable message displayed. 
+    if (response.ok) {
+        alert('Thankyou for visiting MixMate!');
+        document.location.replace('/');
+
+    } else {
+        alert('Failed to log out, please try again!');
+    }
+};
+
 //     // Response to fetch received, status checked and applicable message displayed. 
 //     if (response.ok) {
 //         document.location.replace('/');

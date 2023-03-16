@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('login', {
+    res.render('playlist', {
       users,
       // Pass the logged in flag to the template
       //logged_in: req.session.logged_in,
@@ -58,7 +58,7 @@ router.get('/login', (req, res) => {
 
 router.get('/playlists', async (req, res) => {
   const playlistData = await Playlist.findAll({
-    //include: [{ model: Song, User },],
+    // include: [{ model: Song, User },],
   });
   const playlistAll = playlistData.map(obj => obj.get({plain: true}))
   res.render('playlist', { playlistAll })
