@@ -3,17 +3,17 @@ const { Playlist } = require('../models');
 const playlistData = [
     {
         id: 1,
-        playlist_name: "NealeAust",
+        playlist_name: "test list 1",
         user_id: 1,
     },
     {
         id: 2,
-        playlist_name: "Rockin",
+        playlist_name: "test list 2",
         user_id: 2,
     },
     {
         id: 3,
-        playlist_name: "Country_Songs",
+        playlist_name: "test list 3",
         user_id: 3,
     }
 ];
