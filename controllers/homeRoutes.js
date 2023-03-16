@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('playlist', {
+    res.render('login', {
       users,
       // Pass the logged in flag to the template
       //logged_in: req.session.logged_in,
@@ -49,7 +49,7 @@ router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
     // res.redirect('/api/playlist-routes');
-    res.render('playlist');
+    res.render('/login');
     return;
   }
 
