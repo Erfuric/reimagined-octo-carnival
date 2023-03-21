@@ -3,6 +3,8 @@ const express = require('express');
 const e = require('express');
 const app = express();
 
+console.log('newplaylist script is running');
+
 // TO DO: Logic and functions for creating new playlist including submit button 
 
 const createButton = document.getElementById('create-button');
