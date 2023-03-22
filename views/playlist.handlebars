@@ -1,8 +1,13 @@
-<div class="max-w-screen-lg mx-auto">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-    {{#each playlistAll as |playlist|}}
-    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800">
-      <div class="px-6 py-4">
+<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 mx-auto">
+  <div class="px-6 py-4">
+
+    <div class="dark:text-white">
+      <h4>You are viewing playlists on {{today_date}} </h4>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {{#each playlistAll as |playlist|}}
+      <div class="bg-gray-100 dark:bg-gray-700">
 
         <!-- Card header -->
         <div class="bg-gray-100 dark:bg-gray-700 px-6 py-4">
@@ -14,11 +19,35 @@
           <h3 class="dark:text-white">playlist ID: 
             {{playlist.id}}
           </h3>
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:bg-gray-800 dark:hover:bg-gray-600" onclick="showPlaylist({{playlist.id}})">View Songs</button>
         </div>
 
+        <!-- "View Songs" button -->
+        <div class="px-6 py-4">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:bg-gray-800 dark:hover:bg-gray-600" type="button" id="view-songs-button-{{playlist.id}}">
+            View Songs
+          </button>
+        </div>
+
+        <!-- Song list -->
+        <ul class="hidden py-2 text-center">
+          {{#each playlist.Songs as |song|}}
+            <li>{{song.song}} - {{song.artist}}</li>
+          {{/each}}
+        </ul>
+
       </div>
+      {{/each}}
     </div>
-    {{/each}}
+
   </div>
+
+  <script>
+    const viewButtons = document.querySelectorAll('[id^="view-songs-button-"]');
+    viewButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const songList = button.parentElement.querySelector('ul');
+        songList.classList.toggle('hidden');
+      });
+    });
+  </script>
 </div>
