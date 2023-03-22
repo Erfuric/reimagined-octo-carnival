@@ -6,9 +6,11 @@ const Playlist = require('../models/playlist');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    res.render('playlist', {
-      logged_in: req.session.logged_in,
+    const playlistData = await Playlist.findAll({
+      include: [{ model: Song, User }],
     });
+    const playlistAll = playlistData.map((obj) => obj.get({ plain: true }));
+    res.render('playlist', { playlistAll, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -17,7 +19,7 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/playlist');
     return;
   }
 
