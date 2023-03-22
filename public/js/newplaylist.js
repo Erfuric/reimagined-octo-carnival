@@ -1,57 +1,41 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const express = require('express');
-const e = require('express');
-const app = express();
 
-console.log('newplaylist script is running');
+console.log('newplaylist script executed');
 
-// TO DO: Logic and functions for creating new playlist including submit button 
+// Global variables
 
-const createButton = document.getElementById('create-button');
+const createButtonEl = document.getElementById('create-button');
 const playlistName = document.getElementById('playlist-name')
 const songName = document.querySelector('.song-name');
-const songNames = songName.value;
-
-const songsArray = []
-
-songNames.forEach(songNames => {
-    songNames.push(songsArray);
-});
+const artistName = document.querySelector('.artist-name');
+const genreData = document.querySelector('#genre-box');
 
 
-for (let i = 0; i < songsArray.length; i++) {
-    const songsList = songsArray[i];
-
-    const newPlaylist = sequelize.define('newPlaylist', {
-        // Define the columns of the table
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
-            notNull: true,
-        playlist_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    }});
-      
-      // Insert the data into the database
-      newPlaylist.create({
-        column1: playlistName,
-        column2: songsList,
-      })
-      .then(result => {
-        console.log(result);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-
-    // songsList = [] // push each song and playlist name to sequelize database.. new table for each playlist?
-    // table:
-    // playlist name + id?
-    // song names + ids?
-
-};
+// TODO: add event listener to submit button
 
 
+
+createButtonEl.addEventListener('click', sugmah) 
+
+function sugmah () { //submit event take form data
+
+  // TODO: iterate through each form entry and send to database
+
+  console.log(playlistName.value);
+  // console.log(songName.value);
+  // console.log(artistName.value);
+  console.log(genreData.value);
+
+  const yeebsObj = {
+    playlist: playlistName,
+    song: songName,
+    artist: artistName
+  }
+
+  // need to POST the data to the back end. 
+
+  const postReq = new XMLHttpRequest();
+      postReq.open("POST", "/playlist_db"); // TODO: create this recieve route in homeroutes
+      postReq.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      postReq.send(JSON.stringify(yeebsObj));
+
+}; 

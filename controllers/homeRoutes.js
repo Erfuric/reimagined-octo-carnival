@@ -4,6 +4,37 @@ const withAuth = require('../utils/auth');
 const path = require('path');
 const Playlist = require('../models/playlist');
 
+router.post('/api/users/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: {
+        username: req.body.name,
+      },
+    });
+
+    if (!userData) {
+      res.status(400).json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      res.status(200).json({ user: userData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.get('/', withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -45,18 +76,21 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.get('/playlist', async (req, res) => {
-  // const playlistData = await Playlist.findAll({
-  //   // include: [{ model: Song, User },],
-  // });
-  // const playlistAll = playlistData.map(obj => obj.get({plain: true}))
-  // res.render('playlist', { playlistAll })
-  res.render('playlist');
 
+router.get('/playlist', withAuth, async (req, res) => {
+  try {
+    const playlistData = await Playlist.findAll({
+      include: [{ model: Song, User }],
+    });
+    const playlistAll = playlistData.map((obj) => obj.get({ plain: true }));
+    res.render('playlist', { playlistAll });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
-// send newplaylist {{template}} on navbar click
-router.get('/newplaylist', async (req, res) => {
+router.get('/newplaylist', withAuth, async (req, res) => {
   res.render('newplaylist');
 })
 

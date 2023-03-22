@@ -6,21 +6,20 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const path = require('path');
 const exphbs = require('express-handlebars');
 
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({});
-const {format} = require('date-fns');
+const { format } = require('date-fns');
+
 //today's date
-const today =format(new Date(),'dd.MM.yyyy');
+const today = format(new Date(),'dd.MM.yyyy');
 console.log(today);
 
 const date = hbs.handlebars.registerHelper('today_date', function() {
-  const today =format(new Date(),'dd.MM.yyyy');
+  const today = format(new Date(),'dd.MM.yyyy');
   console.log(today);
   return `${today}`;
 })
-
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -41,7 +40,6 @@ app.use(session(sess));
 
 app.use(express.static('public/images'));
 app.use(express.static(path.join(__dirname, 'public')));
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
