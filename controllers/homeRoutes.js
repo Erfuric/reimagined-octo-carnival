@@ -3,6 +3,9 @@ const { User, Song } = require('../models');
 const withAuth = require('../utils/auth');
 const path = require('path');
 const Playlist = require('../models/playlist');
+const songRoutes = require('./songRoutes');
+
+router.use('/', songRoutes);
 
 router.post('/api/users/login', async (req, res) => {
   try {
