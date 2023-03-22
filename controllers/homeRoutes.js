@@ -3,9 +3,6 @@ const { User, Song } = require('../models');
 const withAuth = require('../utils/auth');
 const path = require('path');
 const Playlist = require('../models/playlist');
-const songRoutes = require('./songRoutes');
-
-router.use('/', songRoutes);
 
 router.post('/api/users/login', async (req, res) => {
   try {
@@ -90,8 +87,26 @@ router.get('/playlist', withAuth, async (req, res) => {
   }
 });
 
+// Add new route to fetch songs for a playlist
+router.get('/playlist/:id/songs', withAuth, async (req, res) => {
+  try {
+    const playlistData = await Playlist.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [{ model: Song, User }],
+    });
+    const playlist = playlistData.get({ plain: true });
+    res.json(playlist.Songs);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/newplaylist', withAuth, async (req, res) => {
   res.render('newplaylist');
 });
 
 module.exports = router;
+``
