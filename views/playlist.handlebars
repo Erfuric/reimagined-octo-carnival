@@ -5,9 +5,9 @@
       <h4>You are viewing playlists on {{today_date}} </h4>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="flex flex-wrap justify-center gap-4">
       {{#each playlistAll as |playlist|}}
-      <div class="bg-gray-100 dark:bg-gray-700">
+      <div class="bg-gray-100 dark:bg-gray-700 flex-grow">
 
         <!-- Card header -->
         <div class="bg-gray-100 dark:bg-gray-700 px-6 py-4">
