@@ -1,22 +1,22 @@
-<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white mx-auto">
+<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 mx-auto">
   <div class="px-6 py-4">
 
-    <div>
+    <div class="dark:text-white">
       <h4>You are viewing playlists on {{today_date}} </h4>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {{#each playlistAll as |playlist|}}
-      <div>
+      <div class="bg-gray-100 dark:bg-gray-700">
 
         <!-- Card header -->
-        <div class="bg-gray-100 px-6 py-4">
-          <h2 class="text-lg font-medium text-gray-800">Playlist: {{playlist.playlist_name}} </h2>
+        <div class="bg-gray-100 dark:bg-gray-700 px-6 py-4">
+          <h2 class="text-lg font-medium text-gray-800 dark:text-white">Playlist: {{playlist.playlist_name}} </h2>
         </div>
 
         <!-- Card body -->
         <div class="px-6 py-4">
-          <h3>playlist ID: 
+          <h3 class="dark:text-white">playlist ID: 
             {{playlist.id}}
           </h3>
         </div>
