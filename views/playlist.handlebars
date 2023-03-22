@@ -1,38 +1,40 @@
-<div class="max-w-screen-xl mx-auto bg-white dark:bg-gray-800">
-  <div class="dark:text-white">
-    <h4>You are viewing playlists on {{today_date}}</h4>
-  </div>
+<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 mx-auto">
+  <div class="px-6 py-4">
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-    {{#each playlistAll as |playlist|}}
-    <div class="bg-gray-100 dark:bg-gray-700 w-full h-full">
-      <!-- Card header -->
-      <div class="bg-gray-100 dark:bg-gray-700 px-6 py-4">
-        <h2 class="text-lg font-medium text-gray-800 dark:text-white">Playlist: {{playlist.playlist_name}}</h2>
-      </div>
-      <!-- Card body -->
-      <div class="px-6 py-4">
-        <h3 class="dark:text-white">Playlist ID: {{playlist.id}}</h3>
-        <button id="view-songs-btn-{{playlist.id}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 dark:bg-gray-800 dark:hover:bg-gray-600">View Songs</button>
-      </div>
+    <div class="dark:text-white">
+      <h4>You are viewing playlists on {{today_date}} </h4>
     </div>
 
-    <!-- Hidden song list -->
-    <div id="song-list-{{playlist.id}}" class="hidden bg-gray-100 dark:bg-gray-700 w-full h-full">
-      <!-- Card header -->
-      <div class="bg-gray-100 dark:bg-gray-700 px-6 py-4">
-        <h2 class="text-lg font-medium text-gray-800 dark:text-white">Playlist: {{playlist.playlist_name}}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {{#each playlistAll as |playlist|}}
+      <div class="bg-gray-100 dark:bg-gray-700">
+
+        <!-- Card header -->
+        <div class="bg-gray-100 dark:bg-gray-700 px-6 py-4">
+          <h2 class="text-lg font-medium text-gray-800 dark:text-white">Playlist: {{playlist.playlist_name}} </h2>
+        </div>
+
+        <!-- Card body -->
+        <div class="px-6 py-4">
+          <h3 class="dark:text-white">playlist ID: 
+            {{playlist.id}}
+          </h3>
+          <div class="mb-4">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded view-songs-btn" data-playlist-id="{{playlist.id}}">View Songs</button>
+          </div>
+          <div class="hidden songs-container" data-playlist-id="{{playlist.id}}">
+            <h4 class="text-lg font-medium text-gray-800 dark:text-white">Songs:</h4>
+            <ul class="list-disc pl-6">
+            {{#each playlist.Songs}}
+              <li>{{this.song}} by {{this.artist}}</li>
+            {{/each}}
+            </ul>
+          </div>
+        </div>
+
       </div>
-      <!-- Song list -->
-      <div class="px-6 py-4">
-        <h3 class="dark:text-white">Songs:</h3>
-        <ul>
-          {{#each playlist.Songs as |song|}}
-          <li class="dark:text-white">{{song.song_name}} by {{song.artist_name}}</li>
-          {{/each}}
-        </ul>
-      </div>
+      {{/each}}
     </div>
-    {{/each}}
+
   </div>
 </div>
