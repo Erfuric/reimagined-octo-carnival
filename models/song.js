@@ -14,21 +14,21 @@ Song.init(
       primaryKey: true,
       notNull: true
     },
-    song: {
+    song: { // form box of SONG text
       type: DataTypes.STRING,
       NotNull: true,
       primaryKey: true
     },
-    artist: {
+    artist: { // form box of ARTIST text
       type: DataTypes.STRING,
       notNull: true,
       primaryKey: true
     },
-    genre: {
-      type: DataTypes.STRING,
-      notNull: true, 
-      primaryKey: true
-    },
+    // genre: {
+    //   type: DataTypes.STRING,
+    //   notNull: true, 
+    //   primaryKey: true
+    // },
     playlist_id: {
       type: DataTypes.INTEGER,
       references: {

@@ -15,10 +15,15 @@ Playlist.init(
       primaryKey: true,
       notNull: true
     },
-    playlist_name: {
+    playlist_name: { // get from playlist name form box
         type: DataTypes.STRING, 
         primaryKey: true,
         notNull: true,
+    },
+    genre: { // get form genre drop down
+        type: DataTypes.STRING,
+        notNull: true, 
+         primaryKey: true
     },
     user_id: {
       type: DataTypes.INTEGER,
